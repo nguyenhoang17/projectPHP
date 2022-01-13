@@ -6,7 +6,7 @@ require_once('Models/Query.php');
       public function getList()
       {
 
-          $posts = $this -> select ($this -> table, ['id', 'title', 'description', 'thumbnail', 'category_id','content', 'created_at']);
+          $posts = $this -> select ($this -> table, ['id', 'title', 'description', 'thumbnail', 'category_id','content', 'created_at','like_post']);
           return $posts;
       }
 

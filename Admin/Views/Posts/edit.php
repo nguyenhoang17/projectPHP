@@ -35,7 +35,7 @@
             <label for="">Create_at</label>
             <input type="datetime-local" class="form-control" id="" placeholder="" name="created_at"  value="">
         </div>
-        <button type="submit" class="btn btn-primary">Add Category</button>
+        <button type="submit" class="btn btn-primary">Update Post</button>
     </form>
 </div>
 <?php require_once('Views/Partials/footer.php');?>

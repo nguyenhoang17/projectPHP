@@ -13,7 +13,7 @@
        <article>
            <div class="post-image">
                <img style="max-height: 350px;" src="../Admin/images/<?=$post['thumbnail']?>" alt="post image 1">
-                 <div class="category"><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['name']?></a></div>
+                 <div class="category"><a href="index.php?mod=post&act=postByCategory&category_id=<?=$post['category_id']?>"><?=$post['name']?></a></div>
              </div>
              <div class="post-text">
                <span class="date"><?=$post['created_at']?></span>
