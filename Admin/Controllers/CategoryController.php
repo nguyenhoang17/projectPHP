@@ -6,9 +6,9 @@ require_once("Controllers/AdminController.php");
     public function index(){
       $category = new Category();
       $categories = $category-> getList();
-
-
-      $this->view('Categories/list.php', ['categories' => $categories,
+      $nameParentId = new Category();
+      $nameParentIds = $nameParentId -> getList();
+      $this->view('Categories/list.php', ['categories' => $categories, 'nameParentIds' => $nameParentIds
     ]);
 
 
@@ -35,6 +35,8 @@ require_once("Controllers/AdminController.php");
         'parent_id' => $data['parent_id'],
         'created_at' => $data['created_at']
       ];
+      // var_dump($data_insert);
+      // die();
       $target_dir = 'images/';
       $target_file = $target_dir . basename($_FILES["thumbnail"]["name"]);
       if (move_uploaded_file($_FILES["thumbnail"]["tmp_name"], $target_file)) {
@@ -114,5 +116,18 @@ require_once("Controllers/AdminController.php");
       // die();
       $this-> redirect("index.php?mod=category&act=index");
     }
+
+    //xu ly tim kiem
+      public function handleSearch(){
+        $keyword = $_POST;
+        $keySearch = $_POST['keysearch'];
+        $category = new Category();
+        $categories = $category -> searchCategory($keySearch);
+        $parentId = new Category();
+        $parentIds = $parentId-> getList();
+        // var_dump($posts);
+        // die();
+        $this -> view('Categories/categorysearch.php', ['categories' => $categories,'parentIds'=> $parentIds,'keyword'=> $keyword]);
+      }
   }
 ?>

@@ -1,6 +1,6 @@
 <?php
 require('Models/Post.php');
-require('Models/Category.php');
+// require('Models/Category.php');
 require_once("Controllers/AdminController.php");
 
   class PostController extends AdminController
@@ -8,11 +8,11 @@ require_once("Controllers/AdminController.php");
     public function index(){
       $post = new Post();
       $posts = $post-> getList();
-      // var_dump($categories);
-      // die();
-      // require('Views/Posts/post.php');
+      $category = new Category();
+      $categories = $category-> getList();
+      require('Views/Posts/post.php');
 
-      $this->view('Posts/post.php', ['posts' => $posts,
+      $this->view('Posts/post.php', ['posts' => $posts,'categories' => $categories
       ]);
     }
 
@@ -109,6 +109,18 @@ require_once("Controllers/AdminController.php");
         // var_dump($status);
         // die();
         $this-> redirect("index.php?mod=post&act=index");
+    }
+  //xu ly tim kiem
+    public function handleSearch(){
+      $keyword = $_POST;
+      $keySearch = $_POST['keysearch'];
+      $post = new Post();
+      $posts = $post -> searchPost($keySearch);
+      $category = new Category();
+      $categories = $category-> getList();
+      // var_dump($posts);
+      // die();
+      $this -> view('Posts/postsearch.php', ['posts' => $posts,'categories'=> $categories,'keyword'=> $keyword]);
     }
   }
 ?>

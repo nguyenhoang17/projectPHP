@@ -1,13 +1,16 @@
 
 <?php
   require_once('Views/Partials/header.php');
+  // var_dump($keyw);
+  // die();
 ?>
+
 <div class="card mb-4">
   <div class="container">
     <div class="" style="text-align:center; margin:20px auto;">
       <form action="index.php?mod=post&act=handleSearch" method="POST" style="" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
           <div class="input-group">
-              <input class="form-control" name="keysearch" type="text" placeholder="Nhập chủ đề" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+              <input value="<?=$keyword['keysearch']?>" class="form-control" name="keysearch" type="text" placeholder="Nhập chủ đề" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
               <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
           </div>
       </form>
@@ -22,7 +25,7 @@
           <thead>
             <tr>
               <th>STT</th>
-              <th style="width:40%;">Tiêu đề</th>
+              <th>Tiêu đề</th>
               <th style="display:none;">Mô tả</th>
               <th>Ảnh</th>
               <th>Danh mục</th>
@@ -32,19 +35,21 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($posts as $key => $post) { ?>
+            <?php foreach ($categories as $key => $category) { ?>
               <tr>
                 <td><?= $key + 1 ?></td>
-                <td><a href="../Website/index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?= $post['title'] ?></a></td>
-                <td style="display:none;">><?= $post['description'] ?></td>
-                  <td><img src="images/<?= $post['thumbnail'] ?>" style="width: 30px; height: 30px; border-radius: 50%;"></td>
-                    <td><?php foreach ($categories as $key => $category) {
-                      if($post['category_id']==$category['id']){
-                        echo $category['name'];
+                <td><a href="../Website/index.php?mod=post&act=postByCategory&category_id=<?=$category['id']?>"><?= $category['name'] ?></a></td>
+                <td style="display:none;">><?= $category['description'] ?></td>
+                  <td><img src="images/<?= $category['thumbnail'] ?>" style="width: 30px; height: 30px; border-radius: 50%;"></td>
+                    <td><?php foreach ($parentIds as $key => $parentId) {
+                      if($category['parent_id']==$parentId['id']){
+                        echo $parentId['name'];
                       }
-                    } ?></td>
-                      <td style="display:none;"><?= $post['content'] ?></td>
-                    <td><?= date_format(date_create($post['created_at']),"d/m/Y H:i:s") ?></td>
+                    }  if($category['parent_id']==0){
+                        echo "Danh mục cha";
+                      } ?></td>
+
+                    <td><?= date_format(date_create($category['created_at']),"d/m/Y H:i:s") ?></td>
                 <td>
                   <a href="index.php?mod=post&act=handleEdit&id=<?= $post['id'] ?>" class="btn btn-warning" class="btn btn-warning">Sửa</a>
                   <a href="index.php?mod=post&act=deleteList&id=<?= $post['id'] ?>" class="btn btn-danger" class="btn btn-danger">Xóa</a>

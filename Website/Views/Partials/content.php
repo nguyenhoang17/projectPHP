@@ -16,7 +16,7 @@
                  <div class="category"><a href="index.php?mod=post&act=postByCategory&category_id=<?=$post['category_id']?>"><?=$post['name']?></a></div>
              </div>
              <div class="post-text">
-               <span class="date"><?=$post['created_at']?></span>
+               <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
                  <h2><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['title']?></a></h2>
                  <p class="text" style="word-wrap:break-word; height: 100px; overflow: hidden;"><?=$post['content']?></p>
                  <a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>">Đọc thêm</a>
@@ -58,7 +58,17 @@
                  <span class="signing"><img src="images/signing.png" alt="signing"></span>
              </div>
          </div> -->
-
+         <div class="widget tags">
+           <h3 style="" class="widget-title">
+               Danh Mục
+             </h3>
+           <div class="tags-container">
+             <?php foreach ($categories as $key => $category) { ?>
+               <a href="index.php?mod=post&act=postByCategory&category_id=<?=$post['category_id']?>"><?=$category['name']?></a>
+                <?php } ?>
+             </div>
+           <div class="clearfix"></div>
+         </div>
          <!-- LATEST POSTS -->
 
          <div class="widget latest-posts">
@@ -72,7 +82,7 @@
                 <img src="../Admin/images/<?=$newpost['thumbnail']?>" style="width : 100px; height : 85px;" alt="post 1" class="post-image">
                   <div class="info-post">
                     <h5><a href="index.php?mod=post&act=postDetail&id=<?=$newpost['id']?>"><?=$newpost['title']?></a></h5>
-                    <span class="date"><?=$newpost['created_at']?></span>
+                    <span class="date"><?=date_format(date_create($newpost['created_at']),"d/m/Y H:i:s")?></span>
                   </div>
                   <div class="clearfix"></div>
               </div>
@@ -90,7 +100,7 @@
                     <img src="../Admin/images/<?=$postByLike['thumbnail']?>" style="width : 100px; height : 85px;" alt="post 1" class="post-image">
                       <div class="info-post">
                         <h5><a href="index.php?mod=post&act=postDetail&id=<?=$postByLike['id']?>"><?=$postByLike['title']?></a></h5>
-                        <span class="date"><?=$postByLike['created_at']?></span>
+                        <span class="date"><?=date_format(date_create($postByLike['created_at']),"d/m/Y H:i:s")?></span>
                       </div>
                       <div class="clearfix"></div>
                   </div>
@@ -103,21 +113,10 @@
 
          <!-- TAGS -->
 
-         <div class="widget tags">
-           <h3 style="margin-top: 50px;" class="widget-title">
-               Danh Mục
-             </h3>
-           <div class="tags-container">
-             <?php foreach ($categories as $key => $category) { ?>
-               <a href="index.php?mod=post&act=postByCategory&category_id=<?=$post['category_id']?>"><?=$category['name']?></a>
-                <?php } ?>
-             </div>
-           <div class="clearfix"></div>
-         </div>
 
          <!-- ADVERTISING -->
 
-         <div class="widget advertising">
+         <div class="widget advertising" style="margin-top: 50px;">
      <div class="advertising-container">
                <img src="Publics/assets/images/banner5.jpg" alt="banner 350x300">
              </div>
@@ -150,19 +149,19 @@
  ****************************************************************** FOOTER ********************************************************************
  *******************************************************************************************************************************************-->
 
- <footer class="tada-container">
+ <footer class="tada-container" style="	margin:100px auto;">
 
    <!-- INSTAGRAM -->
 
    <div class="widget widget-gallery">
      <h3 class="widget-title">INSTAGRAM</h3>
      <div class="image">
-           <a href="#"><img src="Publics/assets/images/img-gallery-1.jpg" alt="image gallery 1"></a>
-             <a href="#"><img src="Publics/assets/images/img-gallery-2.jpg" alt="image gallery 2"></a>
-             <a href="#"><img src="Publics/assets/images/img-gallery-3.jpg" alt="image gallery 3"></a>
-             <a href="#"><img src="Publics/assets/images/img-gallery-4.jpg" alt="image gallery 4"></a>
-             <a href="#"><img src="Publics/assets/images/img-gallery-5.jpg" alt="image gallery 5"></a>
-             <a href="#"><img src="Publics/assets/images/img-gallery-6.jpg" alt="image gallery 6"></a>
+           <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-7.jpg" alt="image gallery 1"></a>
+             <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-8.jpg" alt="image gallery 2"></a>
+             <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-9.jpg" alt="image gallery 3"></a>
+             <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-10.jpg" alt="image gallery 4"></a>
+             <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-11.jpg" alt="image gallery 5"></a>
+             <a href="https://www.instagram.com/p/CYw7QQdhKsO/"><img style="width:183px; height:183px;" src="Publics/assets/images/img-gallery-12.jpg" alt="image gallery 6"></a>
          </div>
          <div class="clearfix"></div>
    </div>

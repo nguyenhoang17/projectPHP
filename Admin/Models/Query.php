@@ -1,7 +1,7 @@
 <?php
   require_once('Models/Connection.php');
   class Query{
-    private $conn;
+    protected $conn;
 
 
     public function __construct(){
@@ -150,7 +150,19 @@
     }
 
 
-    ///tạm update category
+    //Tìm kiếm
+    protected function search($table, $column, $keySearch){
+      $query = "SELECT * FROM $table WHERE $column LIKE '%$keySearch%'";
+      // echo $query;
+      // die();
+      $result = $this->conn->query($query);
+      $data = array();
+
+      while($row = $result->fetch_assoc()) {
+        $data[] = $row;
+      };
+      return $data;
+    }
 
   }
 ?>

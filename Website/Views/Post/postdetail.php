@@ -13,7 +13,7 @@
                 <img style="max-height:500px;" src="../Admin/images/<?=$post['thumbnail']?>" alt="post image 1">
               </div>
               <div class="post-text" style="padding: 20px 50px 50px 50px;">
-                <span class="date"><?=$post['created_at']?> <span class="comments"><a href="index.php?mod=post&act=like&id=<?=$post['id']?>"><i style="float: right;font-size: 50px;" class="far fa-thumbs-up"></i></a></span></span>
+                <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?> <span class="comments"><a href="index.php?mod=post&act=like&id=<?=$post['id']?>"><i style="float: right;font-size: 50px;" class="far fa-thumbs-up"></i></a></span></span>
                   <h1 style="font-size:50px;"><a style="text-transform: uppercase;font-size:25px;"><?=$post['title']?></a></h1>
                   <!-- <p class="text" style="text-overflow:ellipsis; word-break : break-all;"><?=$post['content']?><a href="#"><i class="icon-arrow-right2"></i></a></p> -->
                   <p style="word-wrap:break-word"><?=$post['content']?></p>

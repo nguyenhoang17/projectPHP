@@ -1,5 +1,6 @@
 <?php
 require_once('Models/Query.php');
+require_once('Models/Category.php');
   class Post extends Query
   {
       public $table = 'posts';
@@ -35,20 +36,12 @@ require_once('Models/Query.php');
           return $delete1;
       }
 
-          //   public function updateCategory($id){
-          //      $id =(isset($_GET['id'])?$_GET['id']:0);
-          //     $query= "UPDATE categories
-          //             SET name = '".$data_insert['name']."', description = '".$data_insert['description']."', thumbnail = '".$data_insert['thumbnail']."', parent_id= '".$data_insert['parent_id']."', created_at = '".$data_insert['created_at']."' WHERE id = ".$id;
-          //   ;
-          //   $result = $this->conn->query($query);
-          //   // Buoc 3
-          //   // Tạo 1 mảng để chứa dữ liệu
-          //   $data = array();
-          //
-          //   while($row = $result->fetch_assoc()) {
-          //     $data[] = $row;
-          //   };
-          //   return $data;
-          // }
+      //Tim kiem
+      public function searchPost($keySearch){
+        $searchByTitle = $this -> search($this -> table, 'title', $keySearch);
+        return $searchByTitle;
+      }
+
+
   }
 ?>

@@ -2,6 +2,13 @@
   require_once('Views/Partials/header.php');
 ?>
 <section class="tada-container content-posts blog-3-columns row">
+  <div class="col-xs-12" style="background-color: #ffffff;
+                        padding: 10px;
+                        margin-top: -45px;
+                        margin-bottom:40px;">
+    <h2 style="margin-bottom:20px ;text-transform: uppercase; font-family: Times New Roman, Times, serif;">Danh Sách Danh Mục:</h2>
+  </div>
+
 <div class="tada-container content-posts blog-3-columns row ">
 
      <!-- *** CONTENT COL 1 *** -->
@@ -42,7 +49,7 @@
               </style>
               <div class="post-text">
                 <h1 style="text-transform: uppercase; margin-top: 0px; font-family: 'Playfair Display', serif;"><a style="font-size: 30px;" href="index.php?mod=post&act=postByCategory&category_id=<?=$category['id']?>"><?=$category['name']?></a></h1>
-                <span class="date"><?=$category['created_at']?></span>
+                <span class="date"><?=date_format(date_create($category['created_at']),"d/m/Y H:i:s")?></span>
                   <h2><a href="#"><?=$category['description']?></a></h2>
               </div>
               <!-- <div class="post-info">

@@ -1,13 +1,16 @@
 
 <?php
   require_once('Views/Partials/header.php');
+  // var_dump($keyw);
+  // die();
 ?>
+
 <div class="card mb-4">
   <div class="container">
     <div class="" style="text-align:center; margin:20px auto;">
       <form action="index.php?mod=post&act=handleSearch" method="POST" style="" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
           <div class="input-group">
-              <input class="form-control" name="keysearch" type="text" placeholder="Nhập chủ đề" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+              <input value="<?=$keyword['keysearch']?>" class="form-control" name="keysearch" type="text" placeholder="Nhập chủ đề" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
               <button class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></button>
           </div>
       </form>

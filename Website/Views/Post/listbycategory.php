@@ -25,7 +25,7 @@
                      <div class="category"><a href="#"><?=$post['name']?></a></div>
                  </div>
                  <div class="post-text" style="padding: 20px 0px 0px 0px;">
-                   <span class="date"><?=$post['created_at']?></span>
+                   <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
                      <h2><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['title']?></a></h2>
                      <!-- <p class="text" style="text-overflow:ellipsis; word-break : break-all;"><?=$post['content']?><a href="#"><i class="icon-arrow-right2"></i></a></p> -->
                      <p><a style="color:blue;" href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>">Chi Tiết Bài Viết <i style="color: blue;" class="icon-arrow-right2"></i></a></p>
