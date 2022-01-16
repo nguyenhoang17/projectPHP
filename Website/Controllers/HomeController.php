@@ -19,6 +19,18 @@ class HomeController extends BaseController
     ]);
 
   }
+  //xu ly tim kiem
+    public function handleSearch(){
+      $keyword = $_POST;
+      $keySearch = $_POST['keysearch'];
+      $post = new Post();
+      $posts = $post -> searchPost($keySearch);
+      $category = new Category();
+      $categories = $category-> getList();
+      // var_dump($posts);
+      // die();
+      $this -> view('Home/searchpost.php', ['posts' => $posts,'categories'=> $categories,'keyword'=> $keyword]);
+    }
 
 }
 ?>

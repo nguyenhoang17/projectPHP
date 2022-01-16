@@ -27,16 +27,20 @@
     }
 
     public function getList()
-      {
+    {
         $categories = $this -> select ($this -> table, ['id', 'name', 'description', 'thumbnail', 'parent_id', 'created_at']);
         return $categories;
 
-      }
+    }
 
     public function getCategoryById($id)
-      {
+    {
         $category = $this -> findById($this -> table,$id );
         return $category;
+    }
+    public function searchCategory($keySearch){
+        $searchByName = $this -> search($this -> table, 'name', $keySearch);
+        return $searchByName;
       }
     }
 ?>

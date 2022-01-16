@@ -57,6 +57,19 @@
       return $result;
       //Thông báo lỗi: "$this->conn->error"
     }
+//tìm kiếm
+    protected function search($table, $column, $keySearch){
+      $query = "SELECT * FROM $table WHERE $column LIKE '%$keySearch%'";
+      // echo $query;
+      // die();
+      $result = $this->conn->query($query);
+      $data = array();
+
+      while($row = $result->fetch_assoc()) {
+        $data[] = $row;
+      };
+      return $data;
+    }
 
 
   }

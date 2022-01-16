@@ -4,7 +4,7 @@
 <div class="tada-search">
 <form action="index.php?mod=category&act=handleSearch" method="POST">
       <div class="form-group-search">
-          <input value="" name="keysearch" type="search" class="search-field" placeholder="Search and hit enter...">
+          <input value="<?=$keyword['keysearch']?>" name="keysearch" type="search" class="search-field" placeholder="Search and hit enter...">
           <button type="submit" class="search-btn"><i class="icon-search4"></i></button>
       </div>
     </form>

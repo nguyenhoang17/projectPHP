@@ -1,3 +1,12 @@
+<div class="tada-search">
+<form action="index.php?mod=home&act=handleSearch" method="POST">
+      <div class="form-group-search">
+          <input name="keysearch" type="search" class="search-field" placeholder="Search and hit enter...">
+          <button type="submit" class="search-btn"><i class="icon-search4"></i></button>
+      </div>
+    </form>
+</div>
+
 <!-- SLIDER -->
 
         <div class="tada-slider">

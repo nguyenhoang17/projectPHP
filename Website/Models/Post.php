@@ -110,9 +110,13 @@ require_once('Models/Category.php');
       while($row = $result->fetch_assoc()) {
       	$data[] = $row;
       };
-
-
     	return $data;
     }
+    //Tim kiem
+    public function searchPost($keySearch){
+      $searchByTitle = $this -> search($this -> table, 'title', $keySearch);
+      return $searchByTitle;
+    }
+
   }
 ?>

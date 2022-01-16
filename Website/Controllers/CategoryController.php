@@ -8,5 +8,16 @@ require_once("Controllers/BaseController.php");
       $categories = $category -> getList();
       $this-> view('Category/list.php', ['categories'=> $categories]);
     }
+
+    //xu ly tim kiem
+      public function handleSearch(){
+        $keyword = $_POST;
+        $keySearch = $_POST['keysearch'];
+        $category = new Category();
+        $categories = $category -> searchCategory($keySearch);
+        // var_dump($posts);
+        // die();
+        $this -> view('Category/searchcategory.php', ['categories'=> $categories,'keyword'=> $keyword]);
+      }
   }
 ?>

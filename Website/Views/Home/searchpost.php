@@ -2,9 +2,9 @@
   require_once('Views/Partials/header.php');
 ?>
 <div class="tada-search">
-<form action="index.php?mod=post&act=handleSearch" method="POST">
+<form action="index.php?mod=home&act=handleSearch" method="POST">
       <div class="form-group-search">
-          <input name="keysearch" type="search" class="search-field" placeholder="Search and hit enter...">
+          <input value="<?=$keyword['keysearch']?>" name="keysearch" type="search" class="search-field" placeholder="Search and hit enter...">
           <button type="submit" class="search-btn"><i class="icon-search4"></i></button>
       </div>
     </form>
@@ -14,7 +14,7 @@
                         padding: 10px;
                         margin-top: -45px;
                         margin-bottom:40px;">
-    <h2 style="margin-bottom:20px ;text-transform: uppercase; font-family: Times New Roman, Times, serif;">Danh Sách Các Bài viết:</h2>
+    <h2 style="margin-bottom:20px ;text-transform: uppercase; font-family: Times New Roman, Times, serif;">Danh Sách Các Bài viết Được Tìm kiếm:</h2>
   </div>
 <div class="tada-container content-posts blog-3-columns row " style="">
      <!-- *** CONTENT *** -->
@@ -24,7 +24,11 @@
         <article id="abcde">
             <div class="post-image">
                 <img style="max-height: 170px;" src="../Admin/images/<?=$post['thumbnail']?>" alt="post image 1">
-                  <div class="category"><a href="#"><?=$post['name']?></a></div>
+                  <div class="category"><a href="#"><?php foreach ($categories as $key => $value) {
+                    if($post['category_id']==$value['id']){
+                      echo $value['name'];
+                    }
+                  } ?></a></div>
               </div>
               <div class="post-text" style="padding: 20px 0px 0px 0px;">
                 <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
