@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 
 </head>
 
@@ -37,10 +38,13 @@
                                 <h1 class="h4 text-gray-900 mb-4">Đăng Ký Tài Khoản!</h1>
                             </div>
                             <form class="user" action="index.php?mod=auth&act=handleRegister" method="POST">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="form-group">
+                                    <div class=" mb-3 mb-sm-0">
                                         <input type="text" name="name" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder="Tên">
+                                            <?php if(isset($_SESSION['error']['name'])){ ?>
+                                                <span style="color:red;"> <?=$_SESSION['error']['name'];?></span>
+                                            <?php }  ?>
                                     </div>
                                     <!-- <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
@@ -50,11 +54,17 @@
                                 <div class="form-group">
                                     <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Địa chỉ email">
+                                        <?php if(isset($_SESSION['error']['email'])){ ?>
+                                            <span style="color:red;"> <?=$_SESSION['error']['email'];?></span>
+                                        <?php }  ?>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="form-group">
+                                    <div class=" mb-3 mb-sm-0">
                                         <input type="password" name="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Mật khẩu">
+                                            <?php if(isset($_SESSION['error']['password'])){ ?>
+                                                <span style="color:red;"> <?=$_SESSION['error']['password'];?></span>
+                                            <?php }  ?>
                                     </div>
                                     <!-- <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
@@ -96,7 +106,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script>
+      <?php if(isset($_SESSION['error'])){ ?>
+      toastr.error('Đăng ký thất bại!')
+      <?php } ?>
+    </script>
+
 
 </body>
 
 </html>
+<?php
+if(isset($_SESSION['error'])){
+  unset($_SESSION['error']);
+}
+?>

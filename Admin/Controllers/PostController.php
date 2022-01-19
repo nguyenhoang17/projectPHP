@@ -48,6 +48,7 @@ require_once("Controllers/AdminController.php");
 
         $post = new Post();
         $status = $post -> create($data_insert);
+        $_SESSION['addPost']="";
         $this -> redirect("index.php?mod=post&act=index");
     }
 
@@ -97,6 +98,7 @@ require_once("Controllers/AdminController.php");
         $posts = $post-> updatePost($data_update, $data['id']);
         // var_dump($data_update);
         // die();
+        $_SESSION['editPost']="";
         $this->redirect("index.php?mod=post&act=index");
       }
 
@@ -108,6 +110,7 @@ require_once("Controllers/AdminController.php");
         $status = $post -> destroy($id);
         // var_dump($status);
         // die();
+        $_SESSION['deletePost']="";
         $this-> redirect("index.php?mod=post&act=index");
     }
   //xu ly tim kiem

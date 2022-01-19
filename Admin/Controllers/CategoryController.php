@@ -52,6 +52,7 @@ require_once("Controllers/AdminController.php");
       $category = new Category();
 
       $status = $category -> create($data_insert);
+      $_SESSION['addCategory']="";
       $this -> redirect("index.php?mod=category&act=index");
     }
 
@@ -102,6 +103,7 @@ require_once("Controllers/AdminController.php");
 
         $category = new Category();
         $categories= $category-> updateCategory($data_update,$data['id']);
+        $_SESSION['editCategory']= "";
 
         $this->redirect("index.php?mod=category&act=index");
     }
@@ -114,6 +116,7 @@ require_once("Controllers/AdminController.php");
       $status = $category -> destroy($id);
       // var_dump($status);
       // die();
+      $_SESSION['deleteCategory']= "";
       $this-> redirect("index.php?mod=category&act=index");
     }
 

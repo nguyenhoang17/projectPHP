@@ -20,6 +20,7 @@
 
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 
 </head>
 
@@ -47,17 +48,23 @@
                                           <input type="email" name="email" class="form-control form-control-user"
                                               id="exampleInputEmail" aria-describedby="emailHelp"
                                               placeholder="Nhập địa chỉ email">
+                                              <?php if(isset($_SESSION['error']['email'])){ ?>
+                                                  <span style="color:red;"> <?=$_SESSION['error']['email'];?></span>
+                                              <?php }  ?>
                                       </div>
                                       <div class="form-group">
                                           <input type="password" name="password" class="form-control form-control-user"
                                               id="exampleInputPassword" placeholder="Mật khẩu">
+                                              <?php if(isset($_SESSION['error']['password'])){ ?>
+                                                  <span style="color:red;"> <?=$_SESSION['error']['password'];?></span>
+                                              <?php }  ?>
                                       </div>
                                       <!-- <div class="form-group">
                                           <div class="custom-control custom-checkbox small">
 
                                           </div>
                                       </div> -->
-                                      <input type="submit" name="" value="Đăng Nhập">
+                                      <input style="color:#ffffff;" class="bg-primary" type="submit" name="" value="Đăng Nhập">
 
 
                                       <!-- <hr>
@@ -87,6 +94,7 @@
 
   </div>
 
+
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -96,7 +104,37 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+<script>
+  <?php if(isset($_SESSION['error'])){ ?>
+  toastr.error('Không thể đăng nhập')
+  <?php } ?>
+
+  <?php if(isset($_SESSION['logout'])){ ?>
+  toastr.success('Đăng xuất thành công')
+  <?php } ?>
+
+  <?php if(isset($_SESSION['register'])){ ?>
+  toastr.success('Đăng ký thành công')
+  <?php } ?>
+</script>
 
 </body>
 
 </html>
+<?php
+if(isset($_SESSION['error'])){
+  unset($_SESSION['error']);
+}
+if(isset($_SESSION['logout'])){
+  unset($_SESSION['logout']);
+
+}
+
+if(isset($_SESSION['register'])){
+  unset($_SESSION['register']);
+
+}
+?>

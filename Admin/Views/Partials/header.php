@@ -10,6 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="assets/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -33,11 +34,11 @@
                     <ul style="margin-right: -21px;
                               margin-top: -8px;
                               background: #ccc;
-                              padding: 0 21px 0 29px;" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              padding: 0 0px 0 0px;" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li> -->
-                        <li><a class="dropdown-item" href="index.php?mod=auth&act=logout">Đăng xuất</a></li>
+                        <li><a style="text-align:center;" class="dropdown-item" href="index.php?mod=auth&act=logout">Đăng xuất</a></li>
                     </ul>
                 </li>
             </ul>

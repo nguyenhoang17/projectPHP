@@ -100,6 +100,7 @@
                       <div class="info-post">
                         <h5><a href="index.php?mod=post&act=postDetail&id=<?=$postByLike['id']?>"><?=$postByLike['title']?></a></h5>
                         <span class="date"><?=date_format(date_create($postByLike['created_at']),"d/m/Y H:i:s")?></span>
+                        <p style="text-transform: none;" class="date">Lượt like: <?=$postByLike['like_post']?></p>
                       </div>
                       <div class="clearfix"></div>
                   </div>

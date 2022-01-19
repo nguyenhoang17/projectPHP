@@ -28,6 +28,7 @@
                           // die();
       $user = new User();
       $users = $user ->updateUser($dataUserUpdate, $data['id']);
+      $_SESSION['editUser']="";
         $this->redirect("index.php?mod=user&act=index");
     }
 
@@ -38,6 +39,7 @@
       $status = $user -> destroy($id);
       // var_dump($status);
       // die();
+      $_SESSION['deleteUser']="";
       $this-> redirect("index.php?mod=user&act=index");
     }
 
