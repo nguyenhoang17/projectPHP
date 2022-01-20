@@ -14,7 +14,7 @@ require_once('Models/Category.php');
     public function getListLimit5()
     {
 
-      $query = "SELECT posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
+      $query = "SELECT posts.view_post, posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
                 FROM posts
                 INNER JOIN categories ON categories.id = posts.category_id
                 ORDER BY created_at DESC
@@ -32,7 +32,7 @@ require_once('Models/Category.php');
     public function getListLimit4()
     {
 
-      $query = "SELECT posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
+      $query = "SELECT posts.view_post, posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
                 FROM posts
                 INNER JOIN categories ON categories.id = posts.category_id
                 ORDER BY created_at DESC
@@ -54,9 +54,10 @@ require_once('Models/Category.php');
   // }
 
     public function getListCategoryId(){
-      $query = "	SELECT posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
+      $query = "	SELECT posts.view_post, posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
               FROM posts
-              INNER JOIN categories ON categories.id = posts.category_id";
+              INNER JOIN categories ON categories.id = posts.category_id
+              ORDER BY created_at DESC";
       $result = $this->conn->query($query);
       $data = array();
 
@@ -68,9 +69,10 @@ require_once('Models/Category.php');
     }
 
     public function findPostByCategory($category_id){
-      $query = "	SELECT posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
+      $query = "	SELECT posts.view_post, posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name
               FROM posts
-              INNER JOIN categories ON categories.id = $category_id AND categories.id = posts.category_id";
+              INNER JOIN categories ON categories.id = $category_id AND categories.id = posts.category_id
+              ORDER BY created_at DESC";
               // echo $query;
               // die();
       $result = $this->conn->query($query);
@@ -96,6 +98,15 @@ require_once('Models/Category.php');
       $result = $this->conn->query($query);
       return $result;
     }
+
+    public function viewPost($id){
+      $query = "UPDATE posts
+                SET view_post = view_post + 1
+                WHERE id =".$id;
+      $result = $this->conn->query($query);
+      return $result;
+    }
+
 
     public function getByLike()
     {

@@ -42,6 +42,7 @@
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
                   <a href="#"><i class="fab fa-google-plus-square"></i></a>
+                      <span class="comments"><?=$post['view_post']?><i class="far fa-eye"></i></span>
                       <span class="comments"><?=$post['like_post']?><i class="far fa-thumbs-up"></i></span>
                   </div>
                   <div class="clearfix"></div>

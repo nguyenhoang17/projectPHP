@@ -32,7 +32,8 @@ require_once("Controllers/AdminController.php");
           'category_id' => $data['category_id'],
           'content' => $data['content'],
           'created_at' => $data['created_at'],
-          'like_post' => $data['like_post']
+          'like_post' => $data['like_post'],
+          'view_post' => $data['view_post']
         ];
 
         $target_dir = 'images/';

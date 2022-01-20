@@ -28,7 +28,7 @@
           }
         }
 
-        $query = "SELECT " . $sub_string . " FROM " . '`' . $table . '`';
+        $query = "SELECT " . $sub_string . " FROM " . '`' . $table . '`' . "ORDER BY created_at DESC";
       }else{
         exit();
       }
@@ -59,7 +59,7 @@
     }
 //tìm kiếm
     protected function search($table, $column, $keySearch){
-      $query = "SELECT * FROM $table WHERE $column LIKE '%$keySearch%'";
+      $query = "SELECT * FROM $table WHERE $column LIKE '%$keySearch%'" . "ORDER BY created_at DESC";
       // echo $query;
       // die();
       $result = $this->conn->query($query);

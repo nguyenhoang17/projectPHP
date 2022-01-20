@@ -18,27 +18,9 @@
   </div>
 
 <div class="tada-container content-posts blog-3-columns row ">
-
      <!-- *** CONTENT COL 1 *** -->
        <?php foreach ($categories as $key => $category) {?>
     <div id="dash" class="content col-xs-4 col-md-4 col-xl-4 col-lg-4 col-4">
-      <style media="screen">
-      #dash {
-        max-height: 700px;
-        overflow: hidden;
-      }
-      #abcde h2 {
-      width: 100%;
-      white-space: nowrap;        overflow: hidden; text-overflow: ellipsis;
-      }
-
-      #abcde{
-        max-height: 400px;
-        overflow: hidden
-      }
-
-      </style>
-
         <!-- ARTICLE 1 -->
         <article id="abcde">
             <div class="post-image">
@@ -56,7 +38,7 @@
               }
               </style>
               <div class="post-text">
-                <h1 style="text-transform: uppercase; margin-top: 0px; font-family: 'Playfair Display', serif;"><a style="font-size: 30px;" href="index.php?mod=post&act=postByCategory&category_id=<?=$category['id']?>"><?=$category['name']?></a></h1>
+                <h1 style="text-transform: uppercase; margin-top: 0px;"><a style="font-size: 30px; font-family: times, serif; display: inline-block;" href="index.php?mod=post&act=postByCategory&category_id=<?=$category['id']?>"><?=$category['name']?></a></h1>
                 <span class="date"><?=date_format(date_create($category['created_at']),"d/m/Y H:i:s")?></span>
                   <h2><a href="#"><?=$category['description']?></a></h2>
               </div>
@@ -64,6 +46,22 @@
                 <div class="post-by">Post By <a href="#">AD-Theme</a></div>
               </div> -->
           </article>
+          <style media="screen">
+          #dash {
+            max-height: 700px;
+            overflow: hidden;
+          }
+          #abcde h2 {
+          width: 100%;
+          white-space: nowrap;        overflow: hidden; text-overflow: ellipsis;
+          }
+
+          #abcde{
+            max-height: 400px;
+            overflow: hidden
+          }
+
+          </style>
 
 
      </div>

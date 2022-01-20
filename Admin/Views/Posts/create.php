@@ -6,6 +6,7 @@
 <hr>
     <form action="index.php?mod=post&act=store" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
+            <input type="hidden" class="form-control" id="" placeholder="" name="view_post" value="0">
             <input type="hidden" class="form-control" id="" placeholder="" name="like_post" value="0">
             <label for="">Chủ đề</label>
             <input type="text" class="form-control" id="" placeholder="" name="title" value="">

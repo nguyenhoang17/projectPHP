@@ -27,6 +27,8 @@ require_once("Controllers/BaseController.php");
       $id= (isset($_GET['id'])?$_GET['id']:0);
       $post = new Post();
       $posts = $post -> getSelectPost($id);
+      $viewPost = new Post();
+      $viewPosts = $viewPost-> viewPost($id);
 
       $this -> view('Post/postdetail.php',['posts'=> $posts]);
     }
@@ -37,6 +39,7 @@ require_once("Controllers/BaseController.php");
       $likeposts = $likepost -> likePost($id);
       $post = new Post();
       $posts = $post -> getSelectPost($id);
+      // $this->redirect('Post/postdetail.php');
 
       $this -> view('Post/postdetail.php',['posts'=> $posts]);
     }

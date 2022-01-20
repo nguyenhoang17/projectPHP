@@ -36,7 +36,7 @@
                   <!-- <p class="text" style="text-overflow:ellipsis; word-break : break-all;"><?=$post['content']?><a href="#"><i class="icon-arrow-right2"></i></a></p> -->
                   <p><a style="color:blue;" href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>">Chi Tiết Bài Viết <i style="color: blue;" class="icon-arrow-right2"></i></a></p>
               </div>
-              <div class="post-info">
+              <div class="post-info" style="margin-top: -6px;">
                 <!-- <div class="post-by">Post By <a href="#">AD-Theme</a></div> -->
                   <div class="extra-info" style="float:none;">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>

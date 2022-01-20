@@ -16,12 +16,12 @@
              </div>
              <div class="post-text">
                <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
-                 <h2><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['title']?></a></h2>
+                 <h2 style=""><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['title']?></a></h2>
                  <p class="text" style="word-wrap:break-word; height: 100px; overflow: hidden;"><?=$post['content']?></p>
                  <a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>">Đọc thêm</a>
              </div>
              <div class="post-info">
-               <!-- <div class="post-by">Post By <a href="#">AD-Theme</a></div> -->
+               <div class="post-by"><?=$post['view_post']?><i class="far fa-eye"></i> </div>
                  <div class="extra-info">
                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                  <a href="#"><i class="fab fa-twitter"></i></a>
