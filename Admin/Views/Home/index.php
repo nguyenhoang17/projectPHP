@@ -29,11 +29,22 @@
                                <div class="card bg-success text-white mb-4">
                                    <div class="card-body">Người Dùng</div>
                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                       <a class="small text-white stretched-link" href="<?php if($_SESSION['auth']['email']=='admin@gmail.com'){
+                                       <!-- <a onclick="myFunction()" class="small text-white stretched-link" href="<?php if($_SESSION['auth']['email']=='admin@gmail.com'){
                                            echo "index.php?mod=user&act=index";
                                          };
-                                         ?>">Xem Chi Tiết (Chỉ dành cho Admin)</a>
+                                         ?>">Xem Chi Tiết (Chỉ dành cho Admin)</a> -->
+
+                                         <?php if($_SESSION['auth']['email']=='admin@gmail.com'){?>
+                                           <a class="small text-white stretched-link" href="index.php?mod=user&act=index">Xem Chi Tiết (Chỉ dành cho Admin)</a>
+                                         <?php }else { ?>
+                                                   <a onclick="myFunction()" class="small text-white stretched-link" href="#">Xem Chi Tiết (Chỉ dành cho Admin)</a>
+                                                   <?php } ?>
                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                       <script>
+                                         function myFunction() {
+                                           alert("Phần này chỉ dành cho Admin!!!");
+                                         }
+                                         </script>
                                    </div>
                                </div>
                            </div>
