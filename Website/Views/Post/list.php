@@ -24,7 +24,7 @@
         <article id="abcde">
             <div class="post-image">
                 <img style="max-height: 170px;" src="../Admin/images/<?=$post['thumbnail']?>" alt="post image 1">
-                  <div class="category"><a style="cursor: auto;"><?=$post['name']?></a></div>
+                  <div class="category"><a href= "index.php?mod=post&act=postByCategory&category_id=<?=$post['category_id']?>"><?=$post['name']?></a></div>
               </div>
               <div class="post-text" style="padding: 20px 0px 0px 0px;">
                 <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
