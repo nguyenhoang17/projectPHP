@@ -26,6 +26,15 @@
 }
 });
   </script>
+  <style>
+  body > header > section > div > article > div.post-text > div > p > a,
+  body > header > section > div > article > div.post-text > p > a{
+    color: black;
+  }
+  body > header > section > div > article > div.post-text > div > div.lwptoc.lwptoc-center.lwptoc-light.lwptoc-notInherit{
+    display: none;
+  }
+  </style>
 
 </body>
 </html>

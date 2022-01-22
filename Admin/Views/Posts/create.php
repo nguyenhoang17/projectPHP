@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
             <label for="">Nội dung</label>
-              <input type="text" class="form-control" id="" placeholder="" name="content" value="">
+              <textarea type="text" class="form-control" id="descriptionPost" placeholder="" name="content" value="" rows="8" cols="10"></textarea>
         </div>
         <div class="form-group">
             <label for="">Thời gian tạo</label>

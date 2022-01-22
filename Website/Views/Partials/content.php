@@ -17,7 +17,7 @@
              <div class="post-text">
                <span class="date"><?=date_format(date_create($post['created_at']),"d/m/Y H:i:s")?></span>
                  <h2 style=""><a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>"><?=$post['title']?></a></h2>
-                 <p class="text" style="word-wrap:break-word; height: 100px; overflow: hidden;"><?=$post['content']?></p>
+                 <div class="text" style="word-wrap:break-word; height: 100px; overflow: hidden;"><?=$post['content']?></div>
                  <a href="index.php?mod=post&act=postDetail&id=<?=$post['id']?>">Đọc thêm</a>
              </div>
              <div class="post-info">

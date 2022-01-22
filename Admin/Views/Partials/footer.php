@@ -24,6 +24,14 @@
 <script src="js/datatables-simple-demo.js"></script>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+<script src="//cdn.ckeditor.com/4.17.1/full/ckeditor.js"></script>
+<!-- //check editor -->
+<script>
+      // Replace the <textarea id="editor1"> with a CKEditor 4
+      // instance, using default configuration.
+      CKEDITOR.replace( 'descriptionPost' );
+      CKEDITOR.replace( 'descriptionPostEdit' );
+</script>
 <script>
   <?php if(isset($_SESSION['success'])){ ?>
   toastr.success('Đăng nhập thành công!')
