@@ -25,6 +25,7 @@ require_once('Models/User.php');
           $_SESSION['success']= "Đăng nhập thành công";
         $this-> redirect('index.php?mod=home&act=index');
       }else{
+        $_SESSION['loginfalse']="";
           $this-> redirect('index.php?mod=auth&act=login');
       }
     }

@@ -119,6 +119,10 @@
   <?php if(isset($_SESSION['register'])){ ?>
   toastr.success('Đăng ký thành công')
   <?php } ?>
+
+  <?php if(isset($_SESSION['loginfalse'])){ ?>
+  toastr.error('Tài khoản hoặc mật khẩu không chính xác!')
+  <?php } ?>
 </script>
 
 </body>
@@ -135,6 +139,11 @@ if(isset($_SESSION['logout'])){
 
 if(isset($_SESSION['register'])){
   unset($_SESSION['register']);
+
+}
+
+if(isset($_SESSION['loginfalse'])){
+  unset($_SESSION['loginfalse']);
 
 }
 ?>
