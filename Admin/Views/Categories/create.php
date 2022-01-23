@@ -30,7 +30,7 @@
             <label for="">Thời gian tạo</label>
           <input type="datetime-local" name="created_at" class="form-control" value="">
         </div>
-        <button type="submit" class="btn btn-primary">Thêm</button>
+        <button style="margin-top: 30px;" type="submit" class="btn btn-primary">Thêm</button>
     </form>
 </div>
 <?php require_once('Views/Partials/footer.php');?>

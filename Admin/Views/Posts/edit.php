@@ -35,7 +35,7 @@
             <label for="">Thời gian tạo</label>
             <input type="datetime-local" class="form-control" id="" placeholder="" name="created_at"  value="">
         </div>
-        <button type="submit" class="btn btn-primary">Cập Nhật</button>
+        <button style="margin-top: 30px;" type="submit" class="btn btn-primary">Cập Nhật</button>
     </form>
 </div>
 <?php require_once('Views/Partials/footer.php');?>

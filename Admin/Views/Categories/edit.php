@@ -40,7 +40,7 @@
 
 
 
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button style="margin-top: 30px;" type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
     <?php
