@@ -40,18 +40,14 @@ require_once('Models/Category.php');
     	$result = $this->conn->query($query);
       $data = array();
 
-      while($row = $result->fetch_assoc()) {
+      while($row = $result->fetch_assoc()){
       	$data[] = $row;
       };
 
 
     	return $data;
     }
-  // public function getList(){
-  //   $posts = $this -> select ($this -> table, ['id', 'title', 'description', 'thumbnail', 'category_id','content' , 'created_at']);
-  //   return $posts;
-  //
-  // }
+
 
     public function getListCategoryId(){
       $query = "	SELECT posts.view_post, posts.like_post, posts.id, posts.title, posts.description, posts.thumbnail, posts.category_id,posts.content, posts.created_at, categories.name

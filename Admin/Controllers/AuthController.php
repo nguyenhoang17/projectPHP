@@ -8,6 +8,7 @@ require_once('Models/User.php');
     {
       $this -> view('auth/login.php'); //trở tới trang đăng nhập
     }
+
 //xử lý Đăng nhập
     public function handleLogin()
     {
@@ -29,6 +30,7 @@ require_once('Models/User.php');
           $this-> redirect('index.php?mod=auth&act=login');
       }
     }
+
 //Đăng ký
     public function register()
     {

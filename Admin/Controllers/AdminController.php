@@ -8,6 +8,7 @@ require_once('BaseController.php');
         $this -> redirect('index.php?mod=auth&act=login');
       }
     }
+    
 //xử lý login tồn tại thì trả về true. k tồn tại trả về false
     protected function checkLogin(){
       if (isset($_SESSION['auth'])){

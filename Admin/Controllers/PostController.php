@@ -22,7 +22,7 @@ require_once("Controllers/AdminController.php");
 
       $this -> view("Posts/create.php", ['categories'=> $categories]);
     }
-//luu tru du lieu hnguoi dung tao ra
+    //luu tru du lieu hnguoi dung tao ra
     public function store(){
         $data = $_POST;
 
